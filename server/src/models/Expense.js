@@ -1,0 +1,4 @@
+import mongoose from 'mongoose';
+const splitSchema=new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true},shareMinor:{type:Number,required:true,min:0}},{_id:false});
+const expenseSchema=new mongoose.Schema({group:{type:mongoose.Schema.Types.ObjectId,ref:'Group',required:true,index:true},description:{type:String,required:true,trim:true,maxlength:160},amountMinor:{type:Number,required:true,min:1},paidBy:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true},participants:[{type:mongoose.Schema.Types.ObjectId,ref:'User'}],splitType:{type:String,enum:['equal'],default:'equal'},splits:{type:[splitSchema],required:true},createdBy:{type:mongoose.Schema.Types.ObjectId,ref:'User',required:true}},{timestamps:true});
+export default mongoose.model('Expense',expenseSchema);
