@@ -2,7 +2,7 @@
 
 **Split Expenses. Not Friendships.** Split Smart is a beginner-friendly MERN app for tracking shared expenses among friends, roommates, and travel groups. It stores expense shares and repayments, then calculates each member’s net position from those records. It does not move money or verify bank transfers.
 
-#Video's Link
+##Video's Link
 
 ## Features
 
